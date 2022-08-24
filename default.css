@@ -1,5 +1,5 @@
 :root {
-    --mainColor: #eaeaea;
+    --mainColor: #d7dfd7;
     --secondaryColor: #fff;
 
     --borderColor: #c1c1c1;
@@ -26,7 +26,7 @@ ul {
 h1, h2, h3, h4, h5, h6, strong {
     color: var(--mainText);
     font-family: 'Bree Serif', serif;
-
+    font-weight: 500;
 }
 
 p, li, span, label, input, textarea {
@@ -35,7 +35,7 @@ p, li, span, label, input, textarea {
 }
 
 h1 {
-    font-size: 56px;
+    font-size: 82px;
 }
 
 h2 {
@@ -76,6 +76,93 @@ h6 {
 .main-container {
     width: 1200px;
     margin: 0 auto;
+}
+
+.greeting-wrapper {
+    display: grid;
+    min-height: 10em;
+
+    text-align: center;
+    align-content: center;
+}
+
+.intro-wrapper {
+    background-color: var(--secondaryColor);
+    border-bottom:1px solid var(--borderColor);
+    border-radius: 5px 5px 0 0;
+
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.3);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 3em 30em;
+    grid-template-areas:
+        'nav-bar nav-bar'
+        'left-column right-column'
+    ;
+}
+
+.nav-bar {
+    grid-area: nav-bar;
+    text-align: center;
+    border-bottom:1px solid var(--borderColor);
+    border-radius: 5px 5px 0 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--mainColor);
+
+}
+
+.dots-wrapper {
+    display: flex;
+    padding: 10px;
+}
+
+#dot-1 {
+    background-color: red;
+}
+
+#dot-2 {
+    background-color: yellow;
+}
+
+#dot-3 {
+    background-color: green;
+}
+
+.browser-dot {
+    background-color: black;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    margin: 5px;
+
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.3);
+}
+
+#navigation {
+    margin: 0;
+    padding: 10px;
+}
+
+#navigation li {
+    display: inline-block;
+    margin: 5px 5px;
+}
+
+.left-column {
+    grid-area: left-column;
+
+}
+
+.right-column {
+    grid-area: right-column;
 }
 
 @media screen and (max-width: 1200px) {
