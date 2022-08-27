@@ -97,7 +97,7 @@ h6 {
 
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 3em 30em;
+    grid-template-rows: 3em;
     grid-template-areas:
         'nav-bar nav-bar'
         'left-column right-column'
@@ -158,11 +158,72 @@ h6 {
 
 .left-column {
     grid-area: left-column;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
 
+#pfp {
+    width: 260px;
+    height: 200px;
+    object-fit: cover;
+    object-position: right;
+    border: 2px solid var(--borderColor);
+
+    display: block;
+    margin: 0 auto;
+}
+
+.theme-dot {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: var(--mainColor);
+    border: 1px solid var(--borderColor);
+
+    margin: 5px;
+
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.3);
+
+    cursor: pointer;
+}
+
+.theme-dot:hover {
+    border-width: 3px;    
+}
+
+#shrub-mode {
+    background-color: var(--mainColor);
+}
+
+#light-mode {
+    background-color: #fff;
+}
+
+#dark-mode {
+    background-color: #4b5156;
+}
+
+#theme-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#theme-note {
+    font-size: 14px;
+    color: var(--secondaryText);
+    font-style: italic;
+    text-align: center;
 }
 
 .right-column {
     grid-area: right-column;
+
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 @media screen and (max-width: 1200px) {
