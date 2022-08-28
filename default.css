@@ -225,12 +225,12 @@ h6 {
 
     padding-top: 50px;
     padding-bottom: 30px;
-    padding-left: 15%;
-    padding-right: 5%;
 
+    border:2px solid var(--borderColor);
 
     display: grid;
     align-content: center;
+    padding-right: 5%;
 }
 
 #intro {
@@ -243,6 +243,8 @@ h6 {
     -moz-box-shadow: -30px -30px 0px 0px var(--tertiaryColor);
 
     position: relative;
+
+    margin: 0 auto;
     
 }
 
@@ -308,6 +310,6 @@ h6 {
     }
 
     .right-column {
-        justify-content: center;
+        padding-left: 10%;
     }
 }
