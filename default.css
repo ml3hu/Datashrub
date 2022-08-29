@@ -8,7 +8,13 @@
     --mainText: black;
     --secondaryText: #4b5156;
 
+    --introBorderColor: #c1c1c1;
+
+    --buttonShadow: rgba(0, 0, 0, 0.3);
+    --buttonBorderColor: #c1c1c1;
     --buttonText: #fff;
+
+    --linkColor: #17a2b8;
 }
 
 
@@ -19,7 +25,7 @@ html, body{
 
 a {
     text-decoration: none;
-    color: #17a2b8
+    color: var(--linkColor);
 }
 
 ul {
@@ -95,8 +101,8 @@ h6 {
     border-radius: 5px 5px 0 0;
 
     box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.3);
-    -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
 
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -181,13 +187,13 @@ h6 {
     width: 30px;
     border-radius: 50%;
     background-color: var(--mainColor);
-    border: 1px solid var(--borderColor);
+    border: 2px solid var(--buttonBorderColor);
 
     margin: 5px;
 
-    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.3);
-    -moz-box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 2px 1px var(--buttonShadow);
+    -webkit-box-shadow: 0px 0px 2px 1px var(--buttonShadow);
+    -moz-box-shadow: 0px 0px 2px 1px var(--buttonShadow);
 
     cursor: pointer;
 }
@@ -237,7 +243,7 @@ h6 {
 
 #intro {
     width: 300px;
-    border: 2px solid var(--borderColor);
+    border: 2px solid var(--introBorderColor);
     padding: 15px;
 
     box-shadow: -30px -30px 0px 0px var(--tertiaryColor);
@@ -254,7 +260,7 @@ h6 {
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    border: 2px solid var(--borderColor);
+    border: 2px solid var(--introBorderColor);
     position: absolute;
     background-color: var(--secondaryColor);
 }
@@ -323,12 +329,7 @@ h6 {
 }
 
 .project-title {
-    color:black;
     margin: 0;
-}
-
-.project-intro {
-    color: #4b5156;
 }
 
 .project-links {

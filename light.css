@@ -3,10 +3,8 @@
     --secondaryColor: #fff;
     --tertiaryColor: #eba8a8;
 
-    --borderColor: #c1c1c1;
-
-    --mainText: black;
-    --secondaryText: #4b5156;
-
+    --buttonShadow: rgba(0, 0, 0, 0.3);
+    --buttonBorderColor: #c1c1c1;
     --buttonText: rgb(41, 41, 41);
+    
 }
