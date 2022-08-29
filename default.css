@@ -7,6 +7,8 @@
 
     --mainText: black;
     --secondaryText: #4b5156;
+
+    --buttonText: #fff;
 }
 
 
@@ -195,7 +197,7 @@ h6 {
 }
 
 #shrub-mode {
-    background-color: var(--mainColor);
+    background-color: #d7dfd7;
 }
 
 #light-mode {
@@ -380,9 +382,10 @@ h6 {
     width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
-    color: #fff;
+    color: var(--buttonText);
     background-color: var(--tertiaryColor);
     border: none;
+    
 }
 
 @media screen and (max-width: 1200px) {
