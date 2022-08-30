@@ -47,6 +47,14 @@ p, li, span, label, input, textarea {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+img {
+    transition: .5s;
+}
+
+img:hover {
+    transform:scale(2);
+}
+
 h1 {
     font-size: 82px;
 }
