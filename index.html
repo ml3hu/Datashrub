@@ -8,8 +8,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" type="text/css" href="default.css" />
-        <link id="theme-style" rel="stylesheet" type="text/css" href="dark.css" />
+        <link rel="stylesheet" type="text/css" href="css/default.css" />
+        <link id="theme-style" rel="stylesheet" type="text/css" href="" />
     </head>
     <body>
 
@@ -42,9 +42,9 @@
                         <img id="pfp" src="images/22-02 TSA Oboard Photoshoot-86.jpg">
                         <h5 style="text-align: center; line-height: 0;">Personalize Theme</h5>
                         <div id="theme-wrapper">
-                            <div id="shrub-mode" class="theme-dot"></div>
-                            <div id="light-mode" class="theme-dot"></div>
-                            <div id="dark-mode" class="theme-dot"></div>
+                            <div data-mode="shrub" id="shrub-mode" class="theme-dot"></div>
+                            <div data-mode="light" id="light-mode" class="theme-dot"></div>
+                            <div data-mode="dark" id="dark-mode" class="theme-dot"></div>
                         </div>
 
                         <p id="theme-note">*Theme settings will be saved for<br>your next visit</p>
@@ -170,6 +170,8 @@
                 </form>
             </div>
         </section>
+
+        <script type="text/javascript" src="themeScript.js"></script>
         
     </body>
 </html>
