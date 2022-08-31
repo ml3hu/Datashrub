@@ -24,7 +24,7 @@ html, body {
 }
 
 body * {
-    transition: 0.4s;
+    transition: 0.5s;
 }
 
 a {
@@ -169,12 +169,36 @@ h6 {
 
 #navigation {
     margin: 0;
-    padding: 10px;
+    padding-right: 15px;
+    padding-left: 0;
 }
 
 #navigation li {
     display: inline-block;
     margin: 5px 5px;
+}
+
+#navigation li ul{
+    display: none;
+    padding: 5px 5px;
+    border-radius: 0px 0px 4px 4px;
+    position: absolute;
+    background-color: var(--mainColor); 
+    z-index:999;
+}
+
+#navigation li:hover ul{
+    display: block;
+}
+
+#navigation li ul li{
+    display: block;
+    padding: 5px 5px;
+    border-radius: 4px 4px 4px 4px;
+}
+
+#navigation li ul li:hover{
+    background-color: var(--tertiaryColor);
 }
 
 .left-column {
