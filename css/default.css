@@ -24,7 +24,7 @@ html, body {
 }
 
 body * {
-    transition: 0.5s;
+    transition: 0.4s;
 }
 
 a {
@@ -235,7 +235,7 @@ h6 {
 }
 
 .theme-dot:hover {
-    border-width: 3px;    
+    border-color: var(--tertiaryColor);    
 }
 
 #shrub-mode {
@@ -413,7 +413,6 @@ h6 {
     font-size: 14px;
 }
 
-
 #submit-button {
     margin-top: 10px;
     width: 100%;
@@ -422,7 +421,11 @@ h6 {
     color: var(--buttonText);
     background-color: var(--tertiaryColor);
     border: none;
-    
+}
+
+#submit-button:hover {
+    background-color: var(--buttonBorderColor);
+    cursor: pointer;
 }
 
 @media screen and (max-width: 1200px) {
