@@ -25,9 +25,9 @@
                 <div class="intro-wrapper">
                     <div class="nav-bar">
                         <div class="dots-wrapper">
-                            <div id="dot-1" class="browser-dot"></div>
-                            <div id="dot-2" class="browser-dot"></div>
-                            <div id="dot-3" class="browser-dot"></div>
+                            <div data-mode="shrub" id="shrub-mode" class="theme-dot"></div>
+                            <div data-mode="light" id="light-mode" class="theme-dot"></div>
+                            <div data-mode="dark" id="dark-mode" class="theme-dot"></div>
                         </div>
                         
                         <div id="navigation">
@@ -126,16 +126,16 @@
                 <div class="projects-wrapper">
                     <div>
                         <div class="project">
-                            <a href="https://github.com/ml3hu/Last.fm-ETL"><img class="thumbnail" src="images/Last.fm_ETL.png"></a>
+                            <a href="lastfmetl.html"><img class="thumbnail" src="images/Last.fm_ETL_Dashboard.png"></a>
                             
     
                             <div class="project-description">
                                 <h5 class="project-title">Music Listening History ETL Pipeline</h5>
-                                <p class="project-intro">The project is a one time historic load ETL pipeline which processes music listening data from Last.fm API. 
-                                    The data is transformed and staged into a star schema model, then moved into an SQLite database.
+                                <p class="project-intro">The project is an ETL pipeline which processes music listening data from Last.fm API to provide insight on listening activity. 
+                                    The data is transformed and orchestrated into Kimball's star schema model using Python, SQL, and Airflow. The data is then loaded into Google Data Studio for visualization.
                                 </p>
                                 <div class="project-links">
-                                    <p class=""><a href=""></a></p>
+                                    <p class="dashboard-link"><a href="lastfmetl.html#dashboard">Dashboard</a></p>
                                     <p class="github-link"><a target="_blank" href="https://github.com/ml3hu/Last.fm-ETL">Github</a></p>
                                 </div>
                             </div>

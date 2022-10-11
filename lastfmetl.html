@@ -22,7 +22,7 @@
                     
                 </div>
 
-                <div class="intro-wrapper">
+                <div class="project-intro-wrapper">
                     <div class="nav-bar">
                         <div class="dots-wrapper">
                             <div data-mode="shrub" id="shrub-mode" class="theme-dot"></div>
@@ -35,7 +35,7 @@
                                 <li><a href="#">Navigation</a>
                                     <ul>
                                         <li><a href="index.html">Home</a></li>
-                                        <li><a href="#about-section">About</a></li>
+                                        <li><a href="index.html/#about-section">About</a></li>
                                         <li><a href="#project-section">Projects</a></li>
                                         <li><a href="#contact-section">Contact</a></li>
                                     </ul>
@@ -54,68 +54,55 @@
                         </div>
                     </div>
                     
-                    <div class="left-column">
-                        <img id="pfp" src="images/22-02 TSA Oboard Photoshoot-86.jpg">
-                        <h5 style="text-align: center; line-height: 0;">Personalize Theme</h5>
-                        <div id="theme-wrapper">
-                            <div data-mode="shrub" id="shrub-mode" class="theme-dot"></div>
-                            <div data-mode="light" id="light-mode" class="theme-dot"></div>
-                            <div data-mode="dark" id="dark-mode" class="theme-dot"></div>
+                    <div class="center-column">
+                        <h2 style="text-align: center; line-height: 0;">Project Overview</h2>
+                        <div class="project-overview">
+                            <p>Data pipeline to extract music listening data using the <a target="_blank" href="https://www.last.fm/api">Last.fm Music Discovery API</a>. The project provides insight into personal music listening activity and trends.
+                                <br><br>
+                                On a technical level, the project is a showcase of Python, SQL, Pandas, ETL, dimensional modeling, and Airflow usage.
+                                <br><br>
+                                Detailed documentation is available on my <a target="_blank" href="https://github.com/ml3hu/Last.fm-ETL">Github Project Page</a> and <a href="lastfmetl.html#dashboard">Project Dashboard</a> is available below.
+                                <br><br>
+                            </p>
+                            <h3 style="text-align: center; line-height: 0;">ETL Architecture</h3>
+                            <img class="project-image" src="images/Last.fm_ETL.png">
+                            <ol class="project-l">
+                                <li>Extract music listening data from Last.fm API</li>
+                                <li>Model data and generate staging and final database using star schema</li>
+                                <li>Transform data using Python, Pandas, and SQLAlchemy to the staging layer</li>
+                                <li>Load data from staging layer to final SQLite database</li>
+                                <li>Visualize data using Google Data Studio</li>
+                                <li>Orchestrate tasks with Airflow</li>
+                            </ol>
+                            <h3 style="text-align: center; line-height: 0;">Data Model</h3>
+                            <img class="project-image" src="images/Data_Model.png">
+                            <ol class="project-l">
+                                
+                            </ol>
+                            <h3 style="text-align: center; line-height: 0;">Airflow Orchestration</h3>
+                            <img class="project-image" src="images/Airflow_Taskflow.png">
+                            <p class="center">The airflow DAG supports both one time historic load and incremental batch loads on the music listening data. The DAG is scheduled to run daily.</p>
+                            <ul class="project-l" style="list-style-type:circle;">
+                                <li>`check_initialized`: Selects between the incremental batch load and the initial one time historic load branches.</li>
+                                <li>`initial_extract`: Extracts all historic data and skips tasks if no new data is available.</li>
+                                <li>`update_extract`: Extracts daily batch data and skips tasks if no new data is available.</li>
+                                <li>`initialize_database`: Initializes staging area and final database schema according to the data model above.</li>
+                                <li>`empty_stage`: Empties staging area for new data transformations.</li>
+                                <li>`transform`: Transforms and formats data to fit the data model above.</li>
+                                <li>`load`: Loads/appends transformed data from staging layer to final database.</li>
+                                <li>`export`: Exports database tables as csv for data visualization.</li>
+                            </ul>
                         </div>
-
-                        <p id="theme-note">*Theme settings will be saved for<br>your next visit</p>
-
                     </div>
 
-                    <div class="right-column">
-                        <div id="intro">
-                            <div id="corner-tl" class="corner-dot"></div>
-                            <div id="corner-tr" class="corner-dot"></div>
-                            <h3>What I Do</h3>
-                            <p>I am a driven and self-motivated graduate aspiring to be a data engineer.</p>
-                            <div id="corner-bl" class="corner-dot"></div>
-                            <div id="corner-br" class="corner-dot"></div>
-                        </div>
-                    </div>
                 </div>
         </section>
 
         <section id="about-section" class="s2">
-            <div class="main-container">
-                <div class="about-wrapper">
-                    <div class="about-me">
-                        <h3>More About Me</h3>
-                        <p>I graduated University of Virginia (UVA) with a Bachelor of Science in Computer Science. 
-                            I found a passion for Data Engineering during my time at UVA and plan on pursuring my career in the field.
-                            I am highly driven and enjoy learning on my own.</p>
-                        <p> My hobby is photography, specifically portrait photography because I enjoy capturing the expressions of unique individuals.</p>
-
-                    </div>
-
-                    <div class="skills-wrapper">
-                        <h3>Skills</h3>
-
-                        <p><a target="_blank" href="Minjae_Lee_Resume.pdf">Download Resume</a></p>
-
-                        <div id="skills">
-                            <ul>
-                                <li>Python</li>
-                                <li>SQL</li>
-                                <li>HTML</li>
-                                <li>CSS</li>
-                                <li>Java</li>
-                                <li>JavaScript</li>
-                            </ul>
-                            <ul>
-                                <li>Apache Airflow</li>
-                                <li>Dimensional Modeling</li>
-                                <li>AWS (S3, EC2, Lambda, CloudFormation)</li>
-                                <li>Cloudflare</li>
-                                <li>C</li>
-                                <li>C++</li>
-                            </ul>
-                        </div>
-                    </div>
+            <div class="dashboard-container">
+                <div id="dashboard" class="dashboard">
+                    <iframe width="100%" height="1200" src="https://datastudio.google.com/embed/reporting/3fb35501-1161-4b5e-9213-885770d2231d/page/79HvC" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
             </div>
         </section>
 
@@ -179,8 +166,27 @@
             <div class="main-container">
                 <h3 style="text-align: center;">Contact Me</h3>
 
-                <form id="contact-form">
-                    <p>Success! I will get back to you as soon as possible.</p>
+                <form id="contact-form" action="https://formsubmit.co/d02fdf6aba0ddd34519c3f8306e68dca" method="POST">
+
+                    <!-- Honeypot -->
+                    <input type="text" name="_honey" style="display:none">
+
+                    <!-- Success Page -->
+                    <input type="hidden" name="_next" value="https://datashrub.com/success.html">
+
+                    <label>Name</label>
+                    <input class="input-field" type="text" name="name" placeholder="Name" required>
+
+                    <label>Subject</label>
+                    <input class="input-field" type="text" name="_subject" placeholder="Subject" required>
+
+                    <label>Email</label>
+                    <input class="input-field" type="email" name="email" placeholder="Email" required>
+
+                    <label>Message</label>
+                    <textarea class="input-field" type="text" name="message" placeholder="Text" required></textarea>
+
+                    <button id="submit-button" type="submit">Send</button>
                 </form>
             </div>
         </section>
