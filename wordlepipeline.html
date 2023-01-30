@@ -22,7 +22,7 @@
                     
                 </div>
 
-                <div class="intro-wrapper">
+                <div class="project-intro-wrapper">
                     <div class="nav-bar">
                         <div class="dots-wrapper">
                             <div data-mode="shrub" id="shrub-mode" class="theme-dot"></div>
@@ -35,7 +35,7 @@
                                 <li><a href="#">Navigation</a>
                                     <ul>
                                         <li><a href="index.html">Home</a></li>
-                                        <li><a href="#about-section">About</a></li>
+                                        <li><a href="index.html/#about-section">About</a></li>
                                         <li><a href="#project-section">Projects</a></li>
                                         <li><a href="#contact-section">Contact</a></li>
                                     </ul>
@@ -54,74 +54,40 @@
                         </div>
                     </div>
                     
-                    <div class="left-column">
-                        <img id="pfp" src="images/22-02 TSA Oboard Photoshoot-86.jpg">
-                        <h5 style="text-align: center; line-height: 0;">Personalize Theme</h5>
-                        <div id="theme-wrapper">
-                            <div data-mode="shrub" id="shrub-mode" class="theme-dot"></div>
-                            <div data-mode="light" id="light-mode" class="theme-dot"></div>
-                            <div data-mode="dark" id="dark-mode" class="theme-dot"></div>
+                    <div class="center-column">
+                        <h2 style="text-align: center; line-height: 0;">Wordle Pipeline: Project Overview</h2>
+                        <div class="project-overview">
+                            <p>Data pipeline to process <a target="_blank" href="https://www.nytimes.com/games/wordle/index.html">New York Times Wordle</a> data. 
+                                Despite Wordle existing as a game for many years, a perfect strategy to beat the daily game has yet to be discovered. 
+                                This project aims to provide a data-driven approach to the game by preparing data extracted from Twitter posts sharing each individual's worder score. 
+                                <br><br>
+                                Detailed documentation is available on my <a target="_blank" href="https://github.com/ml3hu/Wordle-Pipeline">Github Project Page</a> and the <a href="lastfmetl.html#dashboard">Project Dashboard</a> is available below.
+                                <br><br>
+                            </p>
+                            <h3 style="text-align: center; line-height: 0;">Architecture</h3>
+                            <img class="project-image" src="images/Wordle_Architecture.png">
+                            <ol class="project-l">
+                                <li>Create GCP Infrastructure with Terraform</li>
+                                <li>Extract <a target="_blank" href="https://www.kaggle.com/datasets/benhamner/wordle-tweets/download?datasetVersionNumber=361">Wordle Tweets Data</a> + scrape <a href="https://wordfinder.yourdictionary.com/wordle/answers/">Wordle Solutions Data</a> from the web</li>
+                                <li>Parquetize data</li>
+                                <li>Load raw data to GCS Bucket</li>
+                                <li>Transform with Spark using Dataproc</li>
+                                <li>Load to Bigquery</li>
+                                <li>Model and Stage data with DBT</li>
+                                <li>Visualization with Looker Studio</li>
+                            </ol>
+                            
                         </div>
-
-                        <p id="theme-note">*Theme settings will be saved for<br>your next visit</p>
-
                     </div>
 
-                    <div class="right-column">
-                        <div id="intro">
-                            <div id="corner-tl" class="corner-dot"></div>
-                            <div id="corner-tr" class="corner-dot"></div>
-                            <h3>What I Do</h3>
-                            <p>I am a driven and self-motivated graduate aspiring to be a data engineer.</p>
-                            <div id="corner-bl" class="corner-dot"></div>
-                            <div id="corner-br" class="corner-dot"></div>
-                        </div>
-                    </div>
                 </div>
         </section>
 
         <section id="about-section" class="s2">
-            <div class="main-container">
-                <div class="about-wrapper">
-                    <div class="about-me">
-                        <h3>More About Me</h3>
-                        <p>I graduated University of Virginia (UVA) with a Bachelor of Science in Computer Science. 
-                            I found an interest and passion for data engineering during my time at UVA and plan to pursue data engineering as a career.
-                            I am highly driven and enjoy learning on my own, which is why I've spent the past 6 months learning about the concepts, tools, and practices of the field.</p>
-                        <p> My hobby is photography, specifically portrait photography because I enjoy capturing the expressions of unique individuals.</p>
-
-                    </div>
-
-                    <div class="skills-wrapper">
-                        <h3>Skills</h3>
-
-                        <p><a target="_blank" href="Minjae_Lee_Resume.pdf">Download Resume</a></p>
-
-                        <div id="skills">
-                            <ul>
-                                <li>Python</li>
-                                <li>SQL</li>
-                                <li>YAML</li>
-                                <li>HTML</li>
-                                <li>CSS</li>
-                                <li>Java</li>
-                                <li>Jinja</li>
-                                <li>C/C++</li>
-                                <li>JavaScript</li>
-                            </ul>
-                            <ul>
-                                <li>Git</li>
-                                <li>Docker</li>
-                                <li>Airflow</li>
-                                <li>Spark</li>
-                                <li>Terraform</li>
-                                <li>GCP + AWS</li>
-                                <li>dbt</li>
-                                <li>Dimensional Modeling</li>
-                                <li>DNS Managment(Cloudflare)</li>
-                            </ul>
-                        </div>
-                    </div>
+            <div class="dashboard-container">
+                <div id="dashboard" class="dashboard">
+                    <iframe width="100%" height="1100" src="https://lookerstudio.google.com/embed/reporting/1cdb0ff2-abfb-447d-afea-8d256f4edf54/page/DkzCD" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
             </div>
         </section>
 
@@ -182,7 +148,7 @@
                             </div>
                         </div>
                     </div>
-
+                    
                 </div>
             </div>
         </section>
@@ -191,8 +157,27 @@
             <div class="main-container">
                 <h3 style="text-align: center;">Contact Me</h3>
 
-                <form id="contact-form">
-                    <p>Success! I will get back to you as soon as possible.</p>
+                <form id="contact-form" action="https://formsubmit.co/d02fdf6aba0ddd34519c3f8306e68dca" method="POST">
+
+                    <!-- Honeypot -->
+                    <input type="text" name="_honey" style="display:none">
+
+                    <!-- Success Page -->
+                    <input type="hidden" name="_next" value="https://datashrub.com/success.html">
+
+                    <label>Name</label>
+                    <input class="input-field" type="text" name="name" placeholder="Name" required>
+
+                    <label>Subject</label>
+                    <input class="input-field" type="text" name="_subject" placeholder="Subject" required>
+
+                    <label>Email</label>
+                    <input class="input-field" type="email" name="email" placeholder="Email" required>
+
+                    <label>Message</label>
+                    <textarea class="input-field" type="text" name="message" placeholder="Text" required></textarea>
+
+                    <button id="submit-button" type="submit">Send</button>
                 </form>
             </div>
         </section>
